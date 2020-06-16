@@ -1,2 +1,2 @@
-# be_style_fluent
-Ein moderner Anstrich für REDAXO 5.10 in Anlehnung an das Fluent-Designkonzept
+## Fluent Backend Style für REDAXO 5.10
+
