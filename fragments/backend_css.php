@@ -40,7 +40,8 @@
             <?= rex_config::get('be_style_fluent', 'color_danger_highlight'); ?>
         ;
 
-
+        --backend--shadow: 0 0 15px 0px rgba(0, 0, 0, 0.15);
+        --backend--shadow-hover: 0 0 20px 0px rgba(0, 0, 0, 0.1);
 
         --backend--rex_nav_bg: #fff;
         --backend--color-invers: #fff;
