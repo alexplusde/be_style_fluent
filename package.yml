@@ -10,12 +10,12 @@ page:
 
 pages: 
     system/ci:
-        title: Branding
+        title: Fluent Backend
         perm: admin
-        icon: rex-icon fa-gear
+        icon: rex-icon fa-toggle-on
         subpages:
             branding:
-                title: Branding
+                title: Farbprofil
 
       
 default_config:
