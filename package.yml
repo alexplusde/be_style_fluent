@@ -10,7 +10,7 @@ page:
 
 pages: 
     system/ci:
-        title: Fluent Backend
+        title: Fluent Branding
         perm: admin
         icon: rex-icon fa-toggle-on
         subpages:
