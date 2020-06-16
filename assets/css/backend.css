@@ -140,7 +140,7 @@ html, body, .rex-page-main {
        width: 100%;
        height: calc(100% - 70px);
   }
-   .rex-is-popup#rex-page-setup .rex-page-container {
+  .rex-is-popup#rex-page-setup .rex-page-container {
      padding-top: 0;
   }
 }
@@ -486,7 +486,6 @@ a.rex-online, a.rex-online:hover, a.rex-text-online, a.rex-text-online:hover {
 
 form {
    max-width: 100%;
-   overflow-x: auto;
 }
 
 .table>thead>tr>th {
