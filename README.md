@@ -16,7 +16,7 @@ Bei der Installation werden diverse Farbwerte und Konfigurationen vorbelegt.
 
 ## First Steps
 
-Nach der Installation sollten zunächst die Einstellungen vorgenommen werden: Diese befinden sich im Menü `System` > `Branding`.
+Nach der Installation sollten zunächst die Einstellungen vorgenommen werden: Diese befinden sich im Menü `System` > `Fluent Branding`.
 
 ## Lizenz
 
