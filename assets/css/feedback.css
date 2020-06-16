@@ -1,0 +1,19 @@
+.across-feedback {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 100;
+}
+
+.across-feedback a {
+    font-size: 40px;
+    background: transparent;
+    border: 0;
+    opacity: 0.2;
+    color: var(--backend--color);
+    text-shadow: 0 0 2px var(--backend--color_font);
+}
+
+.across-feedback a:hover {
+    opacity: 1;
+}

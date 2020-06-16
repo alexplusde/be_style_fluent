@@ -1,0 +1,33 @@
+package: be_style_fluent
+version: '3.0.0'
+author: 'Alexander Walther'
+supportpage: www.alexplus.de
+
+requires:
+    redaxo: ^5.10.1
+page:
+    hidden: true
+
+pages: 
+    system/ci:
+        title: Branding
+        perm: admin
+        icon: rex-icon fa-gear
+        subpages:
+            branding:
+                title: Branding
+
+      
+default_config:
+    font: "Ubuntu"
+    color: "#133a5d"
+    color_anchor: "#2891de"
+    color_danger: "#800000"
+    color_danger_highlight: "#800000"
+    color_font: "#ffffff"
+    color_highlight: "#133a5d"
+    color_success: "#004000"
+    color_success_highlight: "#004000"
+    color_warning: "#780151"
+    color_warning_highlight: "#a3016f"
+    logo: "backend-logo.svg"

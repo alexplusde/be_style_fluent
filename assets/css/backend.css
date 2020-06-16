@@ -1,0 +1,558 @@
+body {
+   font-family: var(--backend--font-family);
+   background: var(--backend--lightgrey);
+}
+
+html, body, .rex-page-main {
+   scroll-behavior: smooth;
+}
+/* Login-Seite */
+#rex-page-login .rex-redaxo-logo {
+   height: 40px;
+}
+#rex-page-login .panel-default .panel-heading, #rex-page-login .panel-default .panel-footer {
+   background-color: #fff;
+}
+#rex-page-login .input-group-btn .btn-view {
+   border-color: var(--backend--color);
+}
+#rex-page-login .btn-view {
+   background-color: var(--backend--color);
+   color: var(--backend--color_font);
+}
+#rex-page-login .rex-page, .rex-nav-top {
+   background-color: var(--backend--color);
+}
+#rex-page-login .rex-nav-top {
+   background-color: var(--backend--color);
+   border: none;
+}
+#rex-page-login .rex-page-main {
+   padding-top: 0;
+}
+#rex-page-login .rex-page-main:before {
+   display: none;
+}
+#rex-form-login .panel-title, #rex-form-login label {
+   color: var(--backend--darkgrey);
+}
+#rex-page-login .form-control, #rex-page-login .input-group-addon {
+   background-color: #fff;
+   color: var(--backend--color);
+}
+#rex-page-login .btn-primary {
+   background-color: var(--backend--color);
+   color: #fff;
+}
+#rex-page-login .btn-primary:hover {
+   background-color: var(--backend--color);
+   filter: brightness(150%);
+}
+#rex-page-login .panel-default {
+   background: var(--backend--rex_nav_bg);
+}
+#rex-page-login .panel-default .panel-heading {
+   display: none;
+}
+#rex-page-login .rex-global-footer {
+   display: none;
+}
+/* */
+/* Layout von Header, Navi und Content im Desktop */
+@media (max-width: 991px) {
+   .rex-is-logged-in .rex-page {
+       background-color: var(--backend--lightgrey);
+  }
+}
+@media (min-width: 992px) {
+   html {
+       overflow: hidden;
+       max-height: 100vh;
+  }
+   body, rex-page-login .rex-page {
+       min-height: 100vh;
+  }
+
+  .rex-is-logged-in {     
+      position: fixed;
+      top: 70px;
+      left: 250px;
+      right: 0;
+      bottom: 0;
+  }
+  .rex-is-logged-in#rex-page-mediapool-media {
+     left: 0;
+  }
+   .rex-global-footer {
+      position: fixed;
+      background: var(--backend--color);
+      color: var(--backend--color_font);
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 40px;
+      padding: 10px;
+      margin-left: 0 !important;
+   }
+
+   .rex-is-logged-in .rex-nav-top.navbar {
+       display: block;
+       position: fixed;
+       top: 0;
+       height: 50px;
+       left: 0;
+       right: 0;
+       box-shadow: 0px 0px 20px -10px rgba(0,0,0,1);
+       z-index: 1000;
+  }
+   .rex-is-logged-in .rex-page-container {
+       display: flex;
+       padding: 0;
+       position: fixed;
+       top: 70px;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       overflow: hidden;
+  }
+  
+  .rex-is-logged-in.rex-is-popup .rex-page-container {
+   top: auto;
+}
+   .rex-is-logged-in #rex-js-nav-main {
+       display: block;
+       overflow-y: auto;
+       flex: 0 0 auto;
+       width: 250px;
+       height: calc(100% - 100px);
+  }
+   .rex-is-logged-in .rex-page-main {
+       display: block;
+       overflow-y: auto;
+       flex: 1 1 auto;
+       width: 100%;
+       height: calc(100% - 70px);
+  }
+  .rex-is-popup#rex-page-setup .rex-page-container {
+     padding-top: 0;
+  }
+}
+/* Backend Panels (Container mit Überschrift und Content, z.B. ein Slice, eine Einstellung, eine Artikelliste (ohne Tabelle)) */
+.panel-info > .panel-heading, .panel-add > .panel-heading, .panel-edit > .panel-heading {
+   background-color: var(--backend--color);
+   border: 1px solid var(--backend--color);
+}
+.panel-add, .panel-edit {
+   border: 1px solid var(--backend--color_edit);
+}
+.panel-default .panel-heading[data-toggle]:hover {
+   background-color: inherit;
+   border-color: transparent;
+}
+.panel-success {
+   border-color: var(--backend--color_success);
+}
+.panel-danger {
+   border-color: var(--backend--color_danger);
+}
+.panel-warning {
+   border-color: var(--backend--color_warning);
+}
+.panel-info {
+   border-color: var(--backend--color);
+}
+.panel-edit, .panel-info, .panel-add {
+   border-color: var(--backend--color);
+}
+.panel-add .panel-body, .panel-edit .panel-body {
+   background: var(--backend--lightgrey);
+}
+/* Backend Panels - Formulare zum Bearbeiten */
+.panel-edit .panel-heading .nav-tabs > li > a:not(.btn) {
+   background-color: var(--backend--grey);
+   border-top-color: var(--backend--grey);
+}
+.panel-edit .panel-heading .nav-tabs > li > a:not(.btn):hover {
+   background-color: var(--backend--lightgrey);
+   border-top-color: var(--backend--lightgrey);
+   color: var(--backend--color);
+}
+.panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn) {
+   background-color: var(--backend--grey);
+   border-top-color: var(--backend--grey);
+}
+.panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn), .panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn):hover {
+   background-color: var(--backend--lightgrey);
+   border-top-color: var(--backend--lightgrey);
+   color: var(--backend--color);
+}
+/* BACKEND Navigation Optik */
+.rex-page-nav .navbar .navbar-nav {
+   margin: 0;
+}
+.rex-page-nav .navbar-default .navbar-nav > li > a {
+   color: var(--backend--color_anchor);
+}
+.rex-page-nav .navbar-default .navbar-nav > li > a:hover, .rex-page-nav .navbar-default .navbar-nav:hover > li.active > a:hover, .rex-page-nav .navbar-default .navbar-nav > li.active > a:hover {
+   text-decoration: underline;
+   color: var(--backend--color_anchor);
+}
+.rex-page-nav .navbar-default .navbar-nav:hover > li.active > a {
+   text-decoration: none;
+}
+.rex-page-nav .navbar {
+   background-color: transparent;
+}
+.rex-page-nav .navbar-default .navbar-nav > li.active > a {
+   color: var(--backend--color_anchor);
+   text-decoration: underline;
+}
+.rex-page-nav .nav-tabs > li > a:not(.btn) {
+   background: var(--backend--grey);
+   color: var(--backend--darkgrey);
+   border: 0;
+   border-top: 1px solid #dfe3e9;
+   border-left: 1px solid #dfe3e9;
+   border-right: 1px solid #dfe3e9;
+   border-radius: 0;
+}
+.rex-page-nav .nav-tabs > li > a:not(.btn):hover {
+   background: var(--backend--lightgrey);
+   color: var(--backend--darkgrey);
+   border-top: 1px solid #dfe3e9;
+}
+.rex-page-nav .nav-tabs > li > a:not(.btn):active {
+   border-top: 1px solid #dfe3e9;
+}
+.rex-page-nav .nav-tabs > li.active > a:not(.btn), .rex-page-nav .nav-tabs > li.active > a:not(.btn):hover {
+   background: var(--backend--lightgrey);
+   border-top: 1px solid #dfe3e9;
+   border-bottom: 1px solid var(--backend--lightgrey);
+}
+ul.rex-nav-main-list.nav.nav-pills.nav-stacked:hover li.active a, ul.rex-nav-main-list.nav.nav-pills.nav-stacked:hover li.active a:focus {
+   border: 1px solid transparent;
+}
+.rex-nav-main li > a:hover, .rex-nav-main li > a:focus {
+   border: 1px solid var(--backend--color) !important;
+   background-color: transparent !important;
+}
+.rex-nav-main li > a, .rex-nav-main-title {
+   border: 1px solid transparent;
+}
+.rex-nav-main li > a, .rex-nav-main-title {
+   color: black;
+}
+.rex-nav-main li > a:hover, .rex-nav-main li > a:focus {
+   color: black;
+   background-color: var(--backend--grey);
+}
+.rex-nav-main.navbar-default {
+   background-color: var(--backend--rex_nav_bg);
+   box-shadow: 0px 0px 20px -10px rgba(19, 58, 93, 1);
+   z-index: 5000;
+}
+/* */
+/* REDAXO BACKEND NAVIGATION - Addons nach unten schieben, YForm-Tabellen und Co. nach oben */
+@media (min-width: 992px) {
+   #rex-js-nav-main > div {
+       display: flex !important;
+       flex-direction: column;
+  }
+   #rex-js-nav-main > div :nth-child(3), #rex-js-nav-main > div :nth-child(4) {
+       order: 10;
+  }
+}
+.rex-main-frame {
+   background: transparent;
+   padding: 15px;
+}
+/* BACKEND Struktur "Block bearbeiten" */
+.rex-slice-select > .dropdown > .btn-default {
+   background-color: var(--backend--grey);
+   color: var(--backend--color);
+   border: 0;
+}
+.rex-slice-select > .dropdown > .btn-default:hover {
+   background-color: var(--backend--grey);
+   color: var(--backend--color);
+   border: 0;
+}
+.rex-slice-select > .dropdown > .btn-default:focus, .rex-slice-select > .dropdown > .btn-default.focus, .rex-slice-select > .dropdown > .btn-default:active, .rex-slice-select > .dropdown > .btn-default.active, .open > .rex-slice-select > .dropdown > .btn-default.dropdown-toggle {
+   background-color: var(--backend--color);
+   color: var(--backend--color-invers);
+   border: 0;
+}
+/* Block bearbeiten */
+.rex-slice-edit {
+   box-shadow: 2px 0px 20px -5px rgba(19, 58, 93, 1);
+}
+.rex-nav-meta .text-muted {
+   color: var(--backend--color-invers);
+}
+/* Alles rund um Buttons und Schaltflächen */
+/* Buttons der Systemseite */
+.btn-safemode-activate {
+   background-color: #fff;
+   border-color: var(--backend--color_warning);
+   color: var(--backend--color_warning);
+}
+.btn-safemode-activate:hover, .btn-safemode-activate:active {
+   background-color: var(--backend--color_warning);
+   border-color: var(--backend--color_warning);
+   color: #fff;
+}
+.btn-debug-mode {
+   background-color: #fff;
+   border-color: var(--backend--color_success);
+   color: var(--backend--color_success);
+}
+.btn-debug-mode:hover, .btn-debug-mode:active {
+   background-color: var(--backend--color_success);
+   border-color: var(--backend--color_success);
+   color: #fff;
+}
+
+/* Weitere Buttons */
+.btn-xs, .btn-group-xs > .btn, .btn, .btn-toolbar > .btn, .btn-toolbar > .btn-group, .btn-toolbar > .input-group {
+   border-radius: 0;
+}
+.btn-default, .btn-abort, .btn-back, .btn-clang, .btn-move, .btn-popup, .btn-reset, .btn-search {
+   border-color: #c1c9d4;
+   margin-right: 1px;
+}
+.btn-save:focus, .btn-apply:focus, .btn-save.focus, .btn-apply.focus {
+   background-color: var(--backend--color_font);
+   border-top-color: var(--backend--color_font);
+   color: var(--backend--color);
+   outline: none;
+   border-color: transparent;
+}
+.btn-save:active, .btn-apply:active, .btn-save.active, .btn-apply.active, .open > .btn-save.dropdown-toggle, .open > .btn-apply.dropdown-toggle {
+   color: #fff;
+   background-color: var(--backend--darkgrey);
+   border-color: var(--backend--darkgrey);
+}
+.btn-primary, .btn-apply, .btn-edit, .btn-save, .btn-select, .btn-send, .btn-setup, .btn-update, .btn-view, .btn-abort {
+   background-color: var(--backend--color_font);
+   color: var(--backend--color);
+   border-color: var(--backend--color);
+}
+.btn-primary:hover, .btn-apply:hover, .btn-save:hover, .btn-select:hover, .btn-send:hover, .btn-setup:hover, .btn-update:hover, .btn-abort:hover {
+   background-color: var(--backend--color);
+   color: var(--backend--color_font);
+   border-color: var(--backend--color_font);
+}
+.btn-edit {
+   background-color: #fff;
+   border-color: var(--backend--color_success);
+   color: var(--backend--color_success);
+}
+.btn-edit:hover, .btn-edit:active {
+   background-color: var(--backend--color_success);
+   border-color: var(--backend--color_success);
+   color: #fff;
+}
+.btn-delete {
+   background-color: #fff;
+   border-color: var(--backend--color_danger);
+   color: var(--backend--color_danger);
+}
+.btn-delete:hover {
+   background-color: var(--backend--color_danger);
+}
+.btn-delete:hover, .btn-delete:active {
+   background-color: var(--backend--color_danger);
+   border-color: var(--backend--color_danger);
+   color: #fff;
+}
+
+.btn-success {
+   color: #fff;
+   background-color: var(--backend--color_success);
+   border-color: var(--backend--color_success);
+}
+
+.btn-success:hover {
+   color: #fff;
+   background-color: var(--backend--color_success_highlight);
+   border-color: var(--backend--color_success_highlight);
+}
+
+.btn-warning {
+   color: #fff;
+   background-color: var(--backend--color_danger);
+   border-color: var(--backend--color_danger);
+}
+
+.btn-warning:hover {
+   color: #fff;
+   background-color: var(--backend--color_danger_highlight);
+   border-color: var(--backend--color_danger_highlight);
+}
+
+
+/* Menü einblenden / ausblenden mobil */
+.rex-is-logged-in .navbar-toggle {
+   z-index: 15000;
+}
+
+/* Paginierung */
+.panel > .rex-nav-pagination {
+   background-color: #ededed;
+}
+
+/* Inhaltsverzeichnisse in README-Darstellung */
+.rex-nav-toc > ul > li > a {
+   background-color: var(--backend--lightgrey);
+}
+.rex-nav-toc > ul > li > a:hover {
+   text-decoration: underline;
+}
+
+/* Struktur Status-Schalter online/offline */
+a {
+   color: var(--backend--color_anchor);
+}
+.rex-is-logged-in .rex-nav-footer a, a:hover, .rex-is-logged-in .rex-nav-footer a:hover {
+   color: var(--backend--color-invers);
+}
+a.rex-offline, a.rex-offline:hover, a.rex-text-offline, a.rex-text-offline:hover {
+   color: var(--backend--color_danger);
+}
+a.rex-online, a.rex-online:hover, a.rex-text-online, a.rex-text-online:hover {
+   color: var(--backend--color_success);
+}
+
+/* Alerts und Mitteilungen */
+.alert {
+   border: none;
+   color: #fff;
+}
+.alert-danger, .panel-danger > .panel-heading {
+   background-color: var(--backend--color_danger);
+}
+.alert-success, .panel-success > .panel-heading {
+   background-color: var(--backend--color_success);
+}
+.alert-warning, .panel-warning > .panel-heading {
+   background-color: var(--backend--color_warning);
+}
+.alert-info, .panel-info > .panel-heading {
+   background-color: var(--backend--color);
+}
+
+/* Tabellen */
+.table-hover > tbody > tr:hover {
+   background-color: var(--backend--color_edit_hover);
+}
+.table > tbody > tr.mark {
+   background-color: #DEEFFF;
+}
+
+/* unsortiert */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+   background: transparent;
+   color: var(--backend--color_anchor);
+   border: 1px solid var(--backend--color);
+}
+.panel-heading .nav-tabs > li > a:not(.btn) {
+   color: var(--backend--darkgrey);
+}
+.panel-footer, .panel-body .rex-form-panel-footer {
+   color: var(--backend--color_font);
+   background: var(--backend--color);
+   border-color: transparent;
+}
+.panel-default.panel-default > .panel-heading {
+   color: var(--backend--darkgrey);
+   background: var(--backend--grey);
+   border-color: transparent;
+}
+.rex-slice-select > .dropdown > .btn-default b {
+   font-weight: 400;
+}
+.nav-tabs {
+   box-shadow: inset 0px -5px 17px -15px rgba(0,0,0,0.4);
+   border-bottom: 1px solid var(--backend--grey) !important;
+}
+.rex-main-frame .rex-page-nav .nav-tabs>li {
+   margin-bottom: -1px;
+}
+.rex-nav-meta .navbar-nav {
+   margin: 7.5px 0px;
+}
+.dropdown-menu > li > a:hover {
+   background-color: var(--backend--grey);
+}
+/* YForm /*
+
+/* Medienpool */
+
+.fileupload-buttonbar .col-lg-7 {
+   width: 100%;
+}
+
+.rex-is-popup .dropdown-menu > .active > a {
+   background-color: var(--backend--color);
+   color: var(--backend--color_font);
+}
+
+
+.rex-nav-language .btn-clang {
+   color: var(--backend--color);
+   background-color: var(--backend--color_font);
+   border: 1px solid var(--backend--color);
+}
+
+.rex-nav-language .btn-clang:hover {
+   background-color: var(--backend--grey);
+}
+
+.rex-nav-language .btn-clang.active {
+   color: var(--backend--color_font);
+   background-color: var(--backend--color);
+   border: 1px solid var(--backend--color);
+}
+
+/* */
+
+/* Quicknavi */
+
+ul.quicknavi li.bg-primary {
+   background-color: var(--backend--color);
+}
+
+.quickfiles.quicknavi li a {
+   color: var(--backend--color);
+}
+
+.quickfiles.quicknavi li a.qn_status_1 {
+   color: var(--backend--color);
+   border-left: 8px solid var(--backend--color_success);
+   padding-bottom: 10px;
+}
+
+.quickfiles.quicknavi li a.qn_status_0 {
+   color: var(--backend--color);
+   opacity: 0.6;
+   border-left: 8px solid var(--backend--color_danger);
+}
+
+.quicknavi-btn-group .btn-group button.btn.btn-default {
+   border: 1px solid var(--backend--color);
+   margin-left: 2px;
+   background-color: transparent;
+}
+
+.quicknavi-btn-group.transparent .btn-group.open button.dropdown-toggle {
+   border: 1px solid var(--backend--color);
+   color: #fff;
+   background-color: var(--backend--color);
+}
+
+.rex-is-popup .quicknavi-btn-group .btn-group button.btn.btn-default {
+   color: #fff;
+   border: 1px solid #fff;
+   margin-left: 2px;
+   background-color: transparent;
+}
