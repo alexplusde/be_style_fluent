@@ -585,7 +585,11 @@ ul.quicknavi li.bg-primary {
 
 .quicknavi-btn-group .btn-group button.btn.btn-default {
    background-color: transparent;
-   box-shadow: var(--backend--shadow); 
+   box-shadow: none; 
+}
+
+.btn-group.quicknavi-btn-group {
+    box-shadow: var(--backend--shadow);
 }
 
 .quicknavi-btn-group.transparent .btn-group.open button.dropdown-toggle {
