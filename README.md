@@ -6,7 +6,7 @@ Ein moderneres Antlitz für das REDAXO Backend.
 
 ## Systemvoraussetzungen
 
-* `REDAXO >= 5.10.1`
+* `REDAXO ^5.13`
 * Das Addon `be_style` muss weiterhin aktiviert bleiben.
 
 # Installation
