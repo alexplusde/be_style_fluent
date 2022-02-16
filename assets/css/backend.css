@@ -6,57 +6,45 @@ body {
 html, body, .rex-page-main {
    scroll-behavior: smooth;
 }
-/* Login-Seite */
-#rex-page-login .rex-redaxo-logo {
-   height: 40px;
-}
-#rex-page-login .panel-default .panel-heading, #rex-page-login .panel-default .panel-footer {
-   background-color: #fff;
-}
-#rex-page-login .input-group-btn .btn-view {
-   border-color: var(--backend--color);
-}
-#rex-page-login .btn-view {
-   background-color: var(--backend--color);
-   color: var(--backend--color_font);
-}
-#rex-page-login .rex-page, .rex-nav-top {
+.rex-nav-top {
    background-color: var(--backend--color);
 }
-#rex-page-login .rex-nav-top {
-   background-color: var(--backend--color);
-   border: none;
-}
-#rex-page-login .rex-page-main {
-   padding-top: 0;
-}
-#rex-page-login .rex-page-main:before {
-   display: none;
-}
+
+/* Login Input-Elemente */
 #rex-form-login .panel-title, #rex-form-login label {
-   color: var(--backend--darkgrey);
+   color: #fff;
 }
 #rex-page-login .form-control, #rex-page-login .input-group-addon {
    background-color: #fff;
-   color: var(--backend--color);
+   color: #0184ba;
 }
 #rex-page-login .btn-primary {
-   background-color: var(--backend--color);
+   background-color: #0184ba;
    color: #fff;
+   border: 1px solid black;
 }
-#rex-page-login .btn-primary:hover {
-   background-color: var(--backend--color);
-   filter: brightness(150%);
+#rex-page-login .input-group-btn .btn-view {
+   background-color: #fff;
+   color: #0184ba;
+   border: 1px solid black;
 }
 #rex-page-login .panel-default {
-   background: var(--backend--rex_nav_bg);
+   background: rgba(0,0,0,0.4);
 }
-#rex-page-login .panel-default .panel-heading {
-   display: none;
-}
+/* Login Footer */
 #rex-page-login .rex-global-footer {
-   display: none;
+   background: transparent;
 }
+#rex-page-login .rex-global-footer a {
+   color: white;
+}
+
+/* Logo */
+#rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-r, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-e, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-d, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-cms,
+#rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-a, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-x, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-o, #rex-page-login .rex-redaxo-logo path.rex-redaxo-logo-reg {
+   fill: #fff;
+}
+
 /* */
 /* Layout von Header, Navi und Content im Desktop */
 @media (max-width: 991px) {
@@ -84,12 +72,15 @@ html, body, .rex-page-main {
      left: 0;
   }
 
-  .rex-is-logged-in#rex-page-mediapool-media .rex-page-container {
+  .rex-is-logged-in#rex-page-mediapool-media .rex-page-container,
+  .rex-is-logged-in#rex-page-linkmap .rex-page-container {
    top: 30px;
   }
-  .rex-is-logged-in#rex-page-mediapool-media .rex-page-main {
+  .rex-is-logged-in#rex-page-mediapool-media .rex-page-main,
+  .rex-is-logged-in#rex-page-linkmap .rex-page-main {
    height: calc(100% - 30px);
   }
+  
    .rex-global-footer {
       position: fixed;
       background: var(--backend--color);
@@ -116,7 +107,7 @@ html, body, .rex-page-main {
        display: flex;
        padding: 0;
        position: fixed;
-       top: 70px;
+       top: 50px;
        left: 0;
        bottom: 0;
        right: 0;
@@ -126,12 +117,16 @@ html, body, .rex-page-main {
   .rex-is-logged-in.rex-is-popup .rex-page-container {
    top: auto;
 }
+.rex-is-logged-in .rex-page-main, #rex-page-setup .rex-page-main {
+   padding-top: 0;
+}
    .rex-is-logged-in #rex-js-nav-main {
        display: block;
        overflow-y: auto;
-       flex: 0 0 auto;
-       width: 250px;
-       height: calc(100% - 100px);
+       flex: 1 1 auto;
+       min-width: 250px;
+       max-width: 280px;
+       height: calc(100% - 80px);
   }
    .rex-is-logged-in .rex-page-main {
        display: block;
@@ -140,10 +135,27 @@ html, body, .rex-page-main {
        width: 100%;
        height: calc(100% - 70px);
   }
-  .rex-is-popup#rex-page-setup .rex-page-container {
+
+  .rex-is-logged-in .rex-nav-main, #rex-page-setup .rex-nav-main {
      padding-top: 0;
   }
+  /* Popup Mediapool Linklist Header Footer Sticky Positioning */
+  .rex-is-popup .rex-page-header,
+  .rex-is-popup#rex-page-setup .rex-page-container {
+     padding-top: 10px;
+  }
 }
+.rex-is-logged-in#rex-page-mediapool-media .rex-page-container {
+   top: 10px;
+}
+.rex-is-popup .rex-nav-top .container-fluid .navbar-brand {
+   height: 40px;
+   line-height: 30px;
+}
+.rex-is-logged-in#rex-page-mediapool-media .rex-page-main {
+    height: calc(100% - -20px);
+}
+
 /* Backend Panels (Container mit Überschrift und Content, z.B. ein Slice, eine Einstellung, eine Artikelliste (ohne Tabelle)) */
 .panel-info > .panel-heading, .panel-add > .panel-heading, .panel-edit > .panel-heading {
    background-color: var(--backend--color);
@@ -190,7 +202,7 @@ html, body, .rex-page-main {
 
 }
 .panel-edit .panel-heading .nav-tabs > li > a:not(.btn):hover {
-   background-color: transparent;
+   background-color: var(--backend--color-invers);
    border-top-color: transparent;
    color: var(--backend--color);
 }
@@ -198,19 +210,24 @@ html, body, .rex-page-main {
    background-color: transparent;
    border-top-color: transparent;
 }
-.panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn), .panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn):hover {
-   background-color: transparent;
+.panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn), 
+.panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn):hover,
+.panel-edit .panel-heading .nav-tabs > li > a:not(.btn) {
+   background-color: var(--backend--color-invers);
    border-top-color: transparent;
    color: var(--backend--color);
 }
 /* BACKEND Navigation Optik */
 
 .rex-nav-top .container-fluid .navbar-brand svg {
-   height: 100%;
+   height: 30px;
    width: auto;
+   max-width: 200px;
 }
 .rex-nav-top .container-fluid .navbar-brand {
    padding: 10px 0;
+   line-height: 30px;
+   height: 50px !important;
 }
 .rex-page-nav .navbar .navbar-nav {
    margin: 0;
@@ -584,7 +601,7 @@ ul.quicknavi li.bg-primary {
 }
 
 .quicknavi-btn-group .btn-group button.btn.btn-default {
-   background-color: transparent;
+   background-color: transparent;  
    box-shadow: none; 
 }
 
@@ -604,4 +621,10 @@ ul.quicknavi li.bg-primary {
    border: 1px solid #fff;
    background-color: transparent;
    box-shadow: var(--backend--shadow); 
+}
+
+/* Formular-Farbeingabe */
+
+.form-control[type="color"] {
+   height: 36px;
 }
