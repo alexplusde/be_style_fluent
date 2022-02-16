@@ -8,6 +8,7 @@ Ein moderneres Antlitz für das REDAXO Backend.
 
 * `REDAXO ^5.13`
 * Das Addon `be_style` muss weiterhin aktiviert bleiben.
+* Aktuell keine Kompatibilität zum Darkmode
 
 # Installation
 
