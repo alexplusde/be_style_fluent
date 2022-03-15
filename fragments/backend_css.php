@@ -1,11 +1,3 @@
-<?php
-    $icon = '';
-    if (rex_config::get('be_style_fluent', 'logo')) {
-        $icon = '/media/'.rex_config::get('be_style_fluent', 'logo');
-    } else {
-        $icon = '/assets/addons/be_style_fluent/images/redaxo-logo.svg';
-    }
-    ?>
 <style>
     :root {
         --backend--color:

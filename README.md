@@ -1,14 +1,12 @@
-## Fluent Backend Style für REDAXO 5
+## Fluent Backend Style für REDAXO 5.10
 
-Ein moderneres Antlitz für das REDAXO Backend.
+Ein moderneres Antlitz für REDAXO 5.10
 
 ![Screenshot](https://raw.githubusercontent.com/alexplusde/be_style_fluent/master/screenshot.png)
 
 ## Systemvoraussetzungen
 
-* `REDAXO ^5.13`
-* Das Addon `be_style` muss weiterhin aktiviert bleiben.
-* Aktuell keine Kompatibilität zum Darkmode
+* `REDAXO >= 5.10.1`
 
 # Installation
 

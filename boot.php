@@ -8,3 +8,7 @@ if (rex::isBackend()) {
 
     rex_extension::register('PAGE_HEADER', 'backend_style_css', rex_extension::LATE);
 }
+?>
+<?php
+
+rex_file::copy($this->getPath('assets'), $this->getAssetsPath(''));

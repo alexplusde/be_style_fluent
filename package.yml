@@ -1,10 +1,11 @@
 package: be_style_fluent
-version: '3.0.0'
+version: '3.1'
 author: 'Alexander Walther'
 supportpage: www.alexplus.de
 
 requires:
-    redaxo: ^5.10.1
+    redaxo: ^5.13.0
+    yrewrite: ^2.8
 page:
     hidden: true
 
@@ -16,6 +17,7 @@ pages:
         subpages:
             branding:
                 title: Farbprofil
+                pjax: false
 
       
 default_config:
@@ -31,3 +33,9 @@ default_config:
     color_warning: "#780151"
     color_warning_highlight: "#a3016f"
     logo: "backend-logo.svg"
+    login_bg: ""
+    login_bg_credits: ""
+    login_bg_credits_url: ""
+    
+    agency: ""
+    agency_url: ""

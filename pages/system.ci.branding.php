@@ -2,6 +2,28 @@
 
 $form = rex_config_form::factory($this->getProperty('package'));
 
+$form->addFieldset('Login');
+
+$field = $form->addMediaField('logo');
+$field->setLabel('Backend-Logo');
+
+$field = $form->addMediaField('login_bg');
+$field->setLabel('Hintergrundbild');
+
+$field = $form->addInputField('text', 'agency', null, ["class" => "form-control"]);
+$field->setLabel('Name der Agentur');
+
+$field = $form->addInputField('url', 'agency_url', null, ["class" => "form-control"]);
+$field->setLabel('Website');
+$field = $form->addInputField('text', 'login_bg_credits', null, ["class" => "form-control"]);
+$field->setLabel('Bildquelle');
+
+$field = $form->addInputField('url', 'login_bg_credits_url', null, ["class" => "form-control"]);
+$field->setLabel('Bildquelle (URL)');
+
+
+$form->addFieldset('Schrift');
+
 $field = $form->addSelectField('font');
 $field->setLabel('Backend-Font');
 $select = $field->getSelect();
@@ -20,6 +42,8 @@ $select->addOption('Source Sans Pro', 'SourceSansPro');
 $select->addOption('Titillium Web', 'TitilliumWeb');
 $select->addOption('Ubuntu', 'Ubuntu');
 $field->setNotice('Schriftart wählen');
+
+$form->addFieldset('Farben');
 
 $field = $form->addRawField('<div class="row"><div class="col-md-4">');
 
@@ -73,9 +97,6 @@ $field = $form->addRawField('</div></div>');
 
 $field = $form->addInputField('color', 'color_anchor');
 $field->setLabel('Link-Farbe');
-
-$field = $form->addMediaField('logo');
-$field->setLabel('Backend-Logo');
 
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'edit', false);
