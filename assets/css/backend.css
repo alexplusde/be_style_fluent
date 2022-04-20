@@ -1,3 +1,4 @@
+
 body {
    font-family: var(--backend--font-family);
    background: var(--backend--lightgrey);
@@ -49,12 +50,17 @@ html, body, .rex-page-main {
 
 /* Backdrop mobil */
 .rex-nav-main-backdrop {
-   backdrop-filter: blur(10px);
-   opacity: 1;
-   background: transparent;
+   backdrop-filter: blur(0px);
+   opacity: 0;
+   background: rgba(255,255,255,0) !important;
+   transition: opacity 1s ease, backdrop-filter 1s ease;
+   pointer-events: none;
+   transform: none;
 }
 .rex-nav-main-is-visible .rex-nav-main-backdrop {
+   backdrop-filter: blur(20px);
    opacity: 1;
+   pointer-events: initial;
 }
 
 @media (max-width: 991px) {
@@ -186,7 +192,10 @@ html, body, .rex-page-main {
 .panel {
    box-shadow: var(--backend--shadow);
    border: 0;
+   transition: 0.5s all ease;
+   border-radius: var(--backend--panel-border-radius);
 }
+
 .panel:hover {
    box-shadow: var(--backend--shadow-hover);
 }
@@ -213,7 +222,7 @@ html, body, .rex-page-main {
 .panel-edit .panel-heading .nav-tabs > li > a:not(.btn) {
    background-color: transparent;
    border-top-color: transparent;
-
+   transition: 0.2s all ease;
 }
 .panel-edit .panel-heading .nav-tabs > li > a:not(.btn):hover {
    background-color: var(--backend--color-invers);
@@ -223,6 +232,7 @@ html, body, .rex-page-main {
 .panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn) {
    background-color: transparent;
    border-top-color: transparent;
+   transition: 0.2s all ease;
 }
 .panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn), 
 .panel-edit .panel-heading .nav-tabs > li.active > a:not(.btn):hover,
@@ -270,7 +280,7 @@ html, body, .rex-page-main {
    border-top: 1px solid transparent;
    border-left: 1px solid transparent;
    border-right: 1px solid transparent;
-   border-radius: 0;
+/*   border-radius: 0; */
 }
 .rex-page-nav .nav-tabs > li > a:not(.btn):hover {
    background: transparent;
@@ -333,19 +343,24 @@ ul.rex-nav-main-list.nav.nav-pills.nav-stacked:hover li.active a, ul.rex-nav-mai
 }
 /* BACKEND Struktur "Block bearbeiten" */
 .rex-slice-select > .dropdown > .btn-default {
+   transition: 0.2s all ease;
    background-color: var(--backend--grey);
    color: var(--backend--color);
-   border: 0;
+   border: 1px solid var(--backend--darkgrey);
+   box-shadow: var(--backend--button-shadow);
 }
 .rex-slice-select > .dropdown > .btn-default:hover {
    background-color: var(--backend--grey);
    color: var(--backend--color);
-   border: 0;
+   border: 1px solid var(--backend--darkgrey);
+   box-shadow: var(--backend--button-shadow-hover);
+
 }
 .rex-slice-select > .dropdown > .btn-default:focus, .rex-slice-select > .dropdown > .btn-default.focus, .rex-slice-select > .dropdown > .btn-default:active, .rex-slice-select > .dropdown > .btn-default.active, .open > .rex-slice-select > .dropdown > .btn-default.dropdown-toggle {
    background-color: var(--backend--color);
    color: var(--backend--color-invers);
-   border: 0;
+   border: 1px solid var(--backend--darkgrey);
+   box-shadow: var(--backend--button-shadow-hover);
 }
 /* Block bearbeiten */
 .rex-slice-edit {
@@ -379,7 +394,7 @@ ul.rex-nav-main-list.nav.nav-pills.nav-stacked:hover li.active a, ul.rex-nav-mai
 
 /* Weitere Buttons */
 .btn-xs, .btn-group-xs > .btn, .btn, .btn-toolbar > .btn, .btn-toolbar > .btn-group, .btn-toolbar > .input-group {
-   border-radius: 0;
+   border-radius: var(--backend--button-border-radius);
 }
 .btn-default, .btn-abort, .btn-back, .btn-clang, .btn-move, .btn-popup, .btn-reset, .btn-search {
    border-color: #c1c9d4;
@@ -479,6 +494,7 @@ a {
    color: var(--backend--color_anchor);
 }
 .rex-is-logged-in .rex-nav-footer a, .rex-nav-footer a:hover, .rex-is-logged-in .rex-nav-footer a:hover {
+   transition: 0.2s all ease;
    color: var(--backend--color-invers);
 }
 a.rex-offline, a.rex-offline:hover, a.rex-text-offline, a.rex-text-offline:hover {
@@ -507,9 +523,14 @@ a.rex-online, a.rex-online:hover, a.rex-text-online, a.rex-text-online:hover {
 }
 
 /* Tabellen */
+.table-hover > tbody > tr {
+   transition: 0.2s all ease;
+}
 .table-hover > tbody > tr:hover {
    background-color: transparent;
    box-shadow: var(--backend--shadow);
+   position: relative;
+   z-index: 1000;
 }
 .table > tbody > tr.mark {
    background-color: #DEEFFF;

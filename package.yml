@@ -1,5 +1,5 @@
 package: be_style_fluent
-version: '3.1.1'
+version: '4.0.0'
 author: 'Alexander Walther'
 supportpage: www.alexplus.de
 
@@ -11,7 +11,7 @@ page:
 
 pages: 
     system/ci:
-        title: Fluent Branding
+        title: Backend-Design
         perm: admin
         icon: rex-icon fa-toggle-on
         subpages:

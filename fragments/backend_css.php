@@ -35,6 +35,7 @@
         --backend--shadow: 0 0 15px 0px rgba(0, 0, 0, 0.15);
         --backend--shadow-hover: 0 0 20px 0px rgba(0, 0, 0, 0.1);
 
+
         --backend--rex_nav_bg: #fff;
         --backend--color-invers: #fff;
 
@@ -46,6 +47,12 @@
         --backend--darkgrey: #555;
 
         --backend--font-family: "<?= rex_config::get('be_style_fluent', 'font'); ?>", sans-serif;
+
+        --backend--panel-border-radius: 15px;
+        --backend--button-border-radius: 10px;
+
+        --backend--button-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.15);
+        --backend--button-shadow-hover: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     }
 
     @font-face {
