@@ -21,7 +21,7 @@ pages:
 
       
 default_config:
-    font: "Ubuntu"
+    font: "Lato"
     color: "#133a5d"
     color_anchor: "#2891de"
     color_danger: "#800000"
