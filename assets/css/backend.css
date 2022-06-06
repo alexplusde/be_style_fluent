@@ -536,6 +536,9 @@ a.rex-online, a.rex-online:hover, a.rex-text-online, a.rex-text-online:hover {
    background-color: #DEEFFF;
 }
 
+.table-responsive {
+   padding-bottom: 120px; /* show overflowed function in yform data tables */
+}
 form {
    max-width: 100%;
 }
