@@ -135,7 +135,7 @@ html, body, .rex-page-main {
   }
   
   .rex-is-logged-in.rex-is-popup .rex-page-container {
-   top: auto;
+   top: 0;
 }
 .rex-is-logged-in .rex-page-main, #rex-page-setup .rex-page-main {
    padding-top: 0;
@@ -155,6 +155,9 @@ html, body, .rex-page-main {
        width: 100%;
        height: calc(100% - 70px);
   }
+  .rex-is-logged-in.rex-is-popup .rex-page-main {
+   height: auto;
+}
 
   .rex-is-logged-in .rex-nav-main, #rex-page-setup .rex-nav-main {
      padding-top: 0;
