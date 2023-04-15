@@ -32,7 +32,7 @@ default_config:
     color_success_highlight: "#004000"
     color_warning: "#780151"
     color_warning_highlight: "#a3016f"
-    logo: "backend-logo.svg"
+    logo: ""
     login_bg: ""
     login_bg_credits: ""
     login_bg_credits_url: ""
