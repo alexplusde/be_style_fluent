@@ -1,4 +1,4 @@
-## Fluent Backend Style für REDAXO 5.13
+## Fluent Backend Style für REDAXO ab 5.13
 
 Ein moderneres Antlitz für REDAXO.
 
