@@ -75,4 +75,10 @@
         font-weight: 700;
         src: local("<?= rex_config::get('be_style_fluent', 'font'); ?>"), local("<?= rex_config::get('be_style_fluent', 'font'); ?>-Bold"), url("/assets/addons/be_style_fluent/fonts/<?= rex_config::get('be_style_fluent', 'font'); ?>-Bold.woff2") format("woff2");
     }
+
+    /* be_tools */
+    .rextree .rtpanel,
+    .rextree a > i {
+        color: <?= rex_config::get('be_style_fluent', 'color_anchor'); ?>;
+    }
 </style>

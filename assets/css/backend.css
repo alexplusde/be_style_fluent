@@ -669,3 +669,10 @@ ul.quicknavi li.bg-primary {
 .form-control[type="color"] {
    height: 36px;
 }
+
+/* be_tools */
+#rextree {
+    box-shadow: var(--backend--shadow);
+    background: white;
+    margin-top: 0px;
+}

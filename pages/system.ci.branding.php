@@ -45,12 +45,12 @@ $field->setNotice('Schriftart wählen');
 
 $form->addFieldset('Farben');
 
-$field = $form->addRawField('<div class="row"><div class="col-md-4">');
+$field = $form->addRawField('<div class="row"><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color');
 $field->setLabel('Farbe');
 
-$field = $form->addRawField('</div><div class="col-md-4">');
+$field = $form->addRawField('</div><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_highlight');
 $field->setLabel('Highlight-Farbe');
@@ -60,35 +60,35 @@ $field = $form->addRawField('</div></div>');
 $field = $form->addInputField('color', 'color_font');
 $field->setLabel('Text-Farbe');
 
-$field = $form->addRawField('<div class="row"><div class="col-md-4">');
+$field = $form->addRawField('<div class="row"><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_danger');
 $field->setLabel('Danger / Offline');
 
-$field = $form->addRawField('</div><div class="col-md-4">');
+$field = $form->addRawField('</div><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_danger_highlight');
 $field->setLabel('Danger / Offline - Highlight');
 
 $field = $form->addRawField('</div></div>');
 
-$field = $form->addRawField('<div class="row"><div class="col-md-4">');
+$field = $form->addRawField('<div class="row"><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_warning');
 $field->setLabel('Warning');
 
-$field = $form->addRawField('</div><div class="col-md-4">');
+$field = $form->addRawField('</div><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_warning_highlight');
 $field->setLabel('Warning - Highlight');
 
 $field = $form->addRawField('</div></div>');
-$field = $form->addRawField('<div class="row"><div class="col-md-4">');
+$field = $form->addRawField('<div class="row"><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_success');
 $field->setLabel('Succes / Online');
 
-$field = $form->addRawField('</div><div class="col-md-4">');
+$field = $form->addRawField('</div><div class="col-md-4 col-lg-6">');
 
 $field = $form->addInputField('color', 'color_success_highlight');
 $field->setLabel('Succes / Online - Highlight');
