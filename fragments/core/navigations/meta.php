@@ -73,37 +73,58 @@ if (count($items) > 0) {
 
 
         $new = '<li style="margin-right: 5px;">
-<div class="dropdown" style="transform: translate(-15px,8px); z-index: 10000;">
-<button class="btn btn-link dropdown-toggle" type="button" id="dropdownnew" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Neu <span class="caret"></span>
-</button>
-<ul class="dropdown-menu" aria-labelledby="dropdownnew">
-<li role="presentation" class="dropdown-header">Medienpool</li>
-<li><a style="display: block;" href="/redaxo/index.php?page=mediapool/upload">Medienpool-Datei</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=mediapool/structure&cat_id=0&media_method=add_cat">Medienpool-Kategorie</a></li>
-<li role="presentation" class="divider"></li>
-<li role="presentation" class="dropdown-header">YForm</li>
-<li><a style="display: block;" href="/redaxo/index.php?page=yform/manager/table_edit&func=add">YForm Tabelle</a></li>
-<li role="presentation" class="divider"></li>
-<li role="presentation" class="dropdown-header">Domain & URL</li>
-<li><a style="display: block;" href="/redaxo/index.php?page=yrewrite/domains&func=add">YRewrite Domain</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=url/generate&func=add">URL-Schema</a></li>
-<li role="presentation" class="divider"></li>
-<li role="presentation" class="dropdown-header">Eigenschaften</li>
-<li><a style="display: block;" href="/redaxo/index.php?page=metainfo/articles&func=add">Meta-Info Artikel</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=metainfo/categories&func=add">Meta-Info Kategorien</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=metainfo/media&func=add">Meta-Info Medien</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=metainfo/clangs&func=add">Meta-Info Sprachen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=global_settings/fields&func=add">Globale Einstellung</a></li>
-<li role="presentation" class="divider"></li>
-<li role="presentation" class="dropdown-header">Administration</li>
-<li><a style="display: block;" href="/redaxo/index.php?page=install/packages/add">Addon herunterladen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=templates&function=add">Template hinzufügen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=modules/modules&function=add">Modul hinzufügen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=cronjob/cronjobs&func=add">Cronjob erstellen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=users/users&FUNC_ADD=1">Benutzer hinzufügen</a></li>
-<li><a style="display: block;" href="/redaxo/index.php?page=users/roles&func=add&default_value=1">Rolle hinzufügen</a></li>
+                <div class="dropdown" style="transform: translate(-15px,8px); z-index: 10000;">
+                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownnew" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Neu <span class="caret"></span></button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownnew">';
 
-</ul></div></li>';
+        $new .= '<li role="presentation" class="dropdown-header">Medienpool</li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=mediapool/upload">Medienpool-Datei</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=mediapool/structure&cat_id=0&media_method=add_cat">Medienpool-Kategorie</a></li>
+                <li role="presentation" class="divider"></li>';
+
+        if(rex_addon::get('yform')->getPlugin('manager')->isAvailable()) {
+            $new .= '<li role="presentation" class="dropdown-header">YForm</li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=yform/manager/table_edit&func=add">YForm Tabelle</a></li>
+                <li role="presentation" class="divider"></li>';
+        }
+
+        $new .= '<li role="presentation" class="dropdown-header">Domain & URL</li>';
+
+        if (rex_addon::get('yrewrite')->isAvailable()) {
+            $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=yrewrite/domains&func=add">YRewrite Domain</a></li>';
+        }
+
+        if (rex_addon::get('url')->isAvailable()) {
+            $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=url/generate&func=add">URL-Schema</a></li>';
+        }
+
+        $new .= '<li role="presentation" class="divider"></li>';
+
+        $new .= '<li role="presentation" class="dropdown-header">Eigenschaften</li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=metainfo/articles&func=add">Meta-Info Artikel</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=metainfo/categories&func=add">Meta-Info Kategorien</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=metainfo/media&func=add">Meta-Info Medien</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=metainfo/clangs&func=add">Meta-Info Sprachen</a></li>';
+
+        if (rex_addon::get('global_settings')->isAvailable()) {
+            $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=global_settings/fields&func=add">Globale Einstellung</a></li>';
+        }
+
+        $new .= '<li role="presentation" class="divider"></li>';
+
+        $new .= '<li role="presentation" class="dropdown-header">Administration</li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=install/packages/add">Addon herunterladen</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=templates&function=add">Template hinzufügen</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=modules/modules&function=add">Modul hinzufügen</a></li>';
+
+        if (rex_addon::get('cronjob')->isAvailable()) {
+            $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=cronjob/cronjobs&func=add">Cronjob erstellen</a></li>';
+        }
+
+        $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=users/users&FUNC_ADD=1">Benutzer hinzufügen</a></li>
+                <li><a style="display: block;" href="/redaxo/index.php?page=users/roles&func=add&default_value=1">Rolle hinzufügen</a></li>
+                
+                </ul></div></li>';
     }
 
     if (count($list_items) > 0) {
