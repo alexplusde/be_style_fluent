@@ -11,33 +11,31 @@ if (count($items) > 0) {
     foreach ($items as $item) {
         $list_item = '';
 
-        if (isset($item['title']) && $item['title'] != '') {
+        if (isset($item['title']) && '' != $item['title']) {
             $list_item .= $item['title'];
         }
 
         $attributes = '';
-        if (isset($item['attributes']) && trim($item['attributes']) != '') {
+        if (isset($item['attributes']) && '' != trim($item['attributes'])) {
             $attributes = ' ' . trim($item['attributes']);
         }
 
-        if (isset($item['href']) && $item['href'] != '') {
+        if (isset($item['href']) && '' != $item['href']) {
             $list_item = '<a href="' . $item['href'] . '"' . $attributes . '>' . $list_item . '</a>';
-        } elseif ($attributes != '') {
+        } elseif ('' != $attributes) {
             $list_item = '<span' . $attributes . '>' . $list_item . '</span>';
         }
 
         $list_items[] = '<li>' . $list_item . '</li>';
     }
 
-    
     // Domain-Button
-    $check = "";
-    $new = "";
+    $check = '';
+    $new = '';
     $list_items = rex_extension::registerPoint(new rex_extension_point('META_NAVI', $list_items));
 
-
     $ydomains = rex_yrewrite::getDomains();
-    
+
     if (is_array($ydomains) && count($ydomains) > 2) {
         $domains = '<li>
         <div class="dropdown" style="transform: translate(-15px,8px);">
@@ -46,31 +44,28 @@ if (count($items) > 0) {
         <ul class="dropdown-menu" aria-labelledby="dropdowndomains">';
 
         foreach ($ydomains as $ydomain => $ydomainx) {
-            if ($ydomain == "default") {
+            if ('default' == $ydomain) {
                 continue;
             }
-            $domains .= '<li><a style="display: block;" href="'.$ydomainx->getUrl().'" target="_blank">'.$ydomainx->getHost().'</a></li>';
+            $domains .= '<li><a style="display: block;" href="' . $ydomainx->getUrl() . '" target="_blank">' . $ydomainx->getHost() . '</a></li>';
         }
-        $domains .=  '</ul></div></li>';
+        $domains .= '</ul></div></li>';
     } else {
-        $domains =  '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href="'.rex::getServer().'" target="_blank"><i class="rex-icon fa-desktop""></i> '.rex::getServerName().'</a>';
+        $domains = '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href="' . rex::getServer() . '" target="_blank"><i class="rex-icon fa-desktop""></i> ' . rex::getServerName() . '</a>';
     }
 
     // Pixelfirma Neu-Button
     $user = rex_backend_login::createUser();
 
-
     if ($user && $user->isAdmin()) {
-        $check = "";
+        $check = '';
         if (rex::getConfig('debug')) {
-            $check .=  '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href=""><i class="rex-icon fa-warning""></i>Debug-Modus aktiv</a>';
+            $check .= '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href=""><i class="rex-icon fa-warning""></i>Debug-Modus aktiv</a>';
         }
 
-        if (rex_config::get('maintenance', "frontend_aktiv") == "Aktivieren") {
-            $check .=  '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href=""><i class="rex-icon fa-warning""></i>Debug-Modus aktiv</a>';
+        if ('Aktivieren' == rex_config::get('maintenance', 'frontend_aktiv')) {
+            $check .= '<a class="btn btn-link" style="float: left; transform: translate(-15px,8px);" href=""><i class="rex-icon fa-warning""></i>Debug-Modus aktiv</a>';
         }
-
-
 
         $new = '<li style="margin-right: 5px;">
 <div class="dropdown" style="transform: translate(-15px,8px); z-index: 10000;">
