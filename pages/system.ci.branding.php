@@ -10,17 +10,16 @@ $field->setLabel('Backend-Logo');
 $field = $form->addMediaField('login_bg');
 $field->setLabel('Hintergrundbild');
 
-$field = $form->addInputField('text', 'agency', null, ["class" => "form-control"]);
+$field = $form->addInputField('text', 'agency', null, ['class' => 'form-control']);
 $field->setLabel('Name der Agentur');
 
-$field = $form->addInputField('url', 'agency_url', null, ["class" => "form-control"]);
+$field = $form->addInputField('url', 'agency_url', null, ['class' => 'form-control']);
 $field->setLabel('Website');
-$field = $form->addInputField('text', 'login_bg_credits', null, ["class" => "form-control"]);
+$field = $form->addInputField('text', 'login_bg_credits', null, ['class' => 'form-control']);
 $field->setLabel('Bildquelle');
 
-$field = $form->addInputField('url', 'login_bg_credits_url', null, ["class" => "form-control"]);
+$field = $form->addInputField('url', 'login_bg_credits_url', null, ['class' => 'form-control']);
 $field->setLabel('Bildquelle (URL)');
-
 
 $form->addFieldset('Schrift');
 
@@ -110,13 +109,13 @@ $fragment->setVar('body', $form->get(), false);
     <div class="col-lg-4">
         <?php
 
-$anchor = '<a target="_blank" href="https://donate.alexplus.de/?addon=be_style_fluent"><img src="'.rex_url::addonAssets('be_style_fluent', 'jetzt-spenden.svg').'" style="width: 100% max-width: 400px;"></a>';
+$anchor = '<a target="_blank" href="https://donate.alexplus.de/?addon=be_style_fluent"><img src="' . rex_url::addonAssets('be_style_fluent', 'jetzt-beauftragen.svg') . '" style="width: 100% max-width: 400px;"></a>';
 
 $fragment = new rex_fragment();
 $fragment->setVar('class', 'info', false);
 $fragment->setVar('title', $this->i18n('be_style_fluent_donate'), false);
 $fragment->setVar('body', '<p>' . $this->i18n('be_style_fluent_info_donate') . '</p>' . $anchor, false);
-echo !rex_config::get("alexplusde", "donated") ? $fragment->parse('core/page/section.php') : "";
+echo !rex_config::get('alexplusde', 'donated') ? $fragment->parse('core/page/section.php') : '';
 ?>
     </div>
 </div>

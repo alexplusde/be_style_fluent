@@ -15,15 +15,15 @@
 ?>
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <?= "Abschnitt hinzufügen" // $this->button_label?> <span class="caret"></span>
+    <?= 'Abschnitt hinzufügen' // $this->button_label?> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="combobox">
     <?php
 foreach ($this->items as $item) {
     ?>
 
-    <li><a href="<?= $item["href"] ?>"
-        class=""><i class="rex-icon fa-chevron-right"></i> <?= $item["title"] ?></a></li>
+    <li><a href="<?= $item['href'] ?>"
+        class=""><i class="rex-icon fa-chevron-right"></i> <?= $item['title'] ?></a></li>
     <?php
 }
 ?>
