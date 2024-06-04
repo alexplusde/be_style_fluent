@@ -77,7 +77,7 @@ if (count($items) > 0) {
                 <li><a style="display: block;" href="/redaxo/index.php?page=mediapool/structure&cat_id=0&media_method=add_cat">Medienpool-Kategorie</a></li>
                 <li role="presentation" class="divider"></li>';
 
-        if(rex_addon::get('yform')->getPlugin('manager')->isAvailable()) {
+        if (rex_addon::get('yform')->getPlugin('manager')->isAvailable()) {
             $new .= '<li role="presentation" class="dropdown-header">YForm</li>
                 <li><a style="display: block;" href="/redaxo/index.php?page=yform/manager/table_edit&func=add">YForm Tabelle</a></li>
                 <li role="presentation" class="divider"></li>';
@@ -118,7 +118,7 @@ if (count($items) > 0) {
 
         $new .= '<li><a style="display: block;" href="/redaxo/index.php?page=users/users&FUNC_ADD=1">Benutzer hinzufügen</a></li>
                 <li><a style="display: block;" href="/redaxo/index.php?page=users/roles&func=add&default_value=1">Rolle hinzufügen</a></li>
-                
+
                 </ul></div></li>';
     }
 

@@ -1,7 +1,7 @@
 <?php
 $user = rex::getUser();
 
-if (rex::isBackend() && rex::getProperty('theme') !== 'dark' && ($user && $user->getValue('theme') !== 'dark')) {
+if (rex::isBackend() && 'dark' !== rex::getProperty('theme') && ($user && 'dark' !== $user->getValue('theme'))) {
     require_once 'functions/backend_styles.php';
 
     rex_view::addCssFile($this->getAssetsUrl('css/backend.css'));

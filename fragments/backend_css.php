@@ -79,6 +79,6 @@
     /* be_tools */
     .rextree .rtpanel,
     .rextree a > i {
-        color: <?= rex_config::get('be_style_fluent', 'color_anchor'); ?>;
+        color: <?= rex_config::get('be_style_fluent', 'color_anchor') ?>;
     }
 </style>
