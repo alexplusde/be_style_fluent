@@ -48,6 +48,11 @@ html, body, .rex-page-main {
    fill: #fff;
 }
 
+#rex-page-login .rex-branding img
+{
+   max-width: 100%;
+}
+
 /* Backdrop mobil */
 .rex-nav-main-backdrop {
    backdrop-filter: blur(0px);
